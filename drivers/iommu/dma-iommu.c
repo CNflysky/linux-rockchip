@@ -8,6 +8,7 @@
  * Copyright (C) 2000-2004 Russell King
  */
 
+#include "linux/export.h"
 #include <linux/acpi_iort.h>
 #include <linux/atomic.h>
 #include <linux/crash_dump.h>
@@ -317,7 +318,7 @@ int iommu_get_dma_cookie(struct iommu_domain *domain)
 	mutex_init(&domain->iova_cookie->mutex);
 	return 0;
 }
-
+EXPORT_SYMBOL(iommu_get_dma_cookie);
 /**
  * iommu_get_msi_cookie - Acquire just MSI remapping resources
  * @domain: IOMMU domain to prepare
